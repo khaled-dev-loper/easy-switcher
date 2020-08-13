@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Switcher Example</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<script src='swicher.js'></script>
+		<link rel='stylesheet' type="text/css" href='swicher.css' />
+	</head>
+	<body dir='rtl'>
+		<div>
+			<br>
+			<div style='text-align:center;' >
+				<div style='text-align:center; margin:auto;'>
+					<switcher class='mg-center outset-shadow' length='2' value='0' function='myfunc'><switch class='outset-shadow font-size-9'><b>خوابیدن در خانه</b></switch></switcher>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script>
+	function myfunc(elem){
+		var value = eval(elem.getAttribute("value"));
+		if(value == 1){
+			elem.getElementsByTagName("switch")[0].getElementsByTagName("b")[0].classList.remove("font-size-9")
+			elem.getElementsByTagName("switch")[0].getElementsByTagName("b")[0].classList.add("font-size-8")
+			elem.getElementsByTagName("switch")[0].getElementsByTagName("b")[0].innerText = "کار کردن";
+		}else{
+			elem.getElementsByTagName("switch")[0].getElementsByTagName("b")[0].classList.remove("font-size-8")
+			elem.getElementsByTagName("switch")[0].getElementsByTagName("b")[0].classList.add("font-size-9")
+			elem.getElementsByTagName("switch")[0].getElementsByTagName("b")[0].innerText = "خوابیدن در خانه";
+		}
+	}
+	</script>
+</html>
